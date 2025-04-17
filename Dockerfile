@@ -9,8 +9,4 @@ WORKDIR /population_ui
 
 EXPOSE 8501
 
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-ENV PYTHONPATH=/wordgame
-
 CMD ["python3.12", "-m", "streamlit", "run", "--server.port", "8501", "./src/Population.py"]
