@@ -1,4 +1,4 @@
-FROM python:3.12.9
+FROM python:3.12
 
 COPY . /population_ui
 
@@ -7,4 +7,6 @@ RUN pip install --no-cache-dir --upgrade -r /population_ui/requirements.txt \
 
 WORKDIR /population_ui
 
-CMD ["python", "src/Population.py"]
+EXPOSE 8501
+
+CMD ["python3.12", "-m", "streamlit", "run", "--server.port", "8501", "./src/Population.py"]
