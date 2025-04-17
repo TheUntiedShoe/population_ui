@@ -55,8 +55,6 @@ jobs:
       - name: Build and push Docker image
         id: push
         uses: docker/build-push-action@v6
-        env:
-          CR_PAT: ${{ env.CR_PAT }}
         with:
           context: .
           platforms: linux/amd64,linux/arm64/v8
